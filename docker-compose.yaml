@@ -2,14 +2,16 @@ services:
     run:
         container_name: flask-dash
         image: darlon/flask-dash
-        # environment:
+        environment:
             # - STREAMLIT_SERVER_ADDRESS=0.0.0.0
             # - STREAMLIT_BROWSER_SERVER_PORT=8501
+            - FLASK_APP=flaskblog.py
         volumes:
             - ./:/data
-        # ports:
-            # - "8501:8501" #Streamlit
-        working_dir: /data
+        ports:
+            - "5000:5000" #Flask
+        working_dir: /data/Flask_blog
         # command: /usr/local/bin/streamlit run --browser.serverAddress 0.0.0.0 --browser.serverPort 8501 ./interface_st.py 
         # command: /usr/local/bin/streamlit run ./interface_st.py 
+        command: flask run -h 0.0.0.0
         # restart: always
