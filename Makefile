@@ -5,6 +5,9 @@ PROJECT_NAME = flask-dash
 run:
 	docker compose up -d
 
+debug:
+	docker compose up
+
 terminal:
 	docker exec -it $(PROJECT_NAME) /bin/bash
 
