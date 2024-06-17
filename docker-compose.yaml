@@ -6,6 +6,7 @@ services:
             # - STREAMLIT_SERVER_ADDRESS=0.0.0.0
             # - STREAMLIT_BROWSER_SERVER_PORT=8501
             - FLASK_APP=flaskblog.py
+            - FLASK_DEBUG=1
         volumes:
             - ./:/data
         ports:
