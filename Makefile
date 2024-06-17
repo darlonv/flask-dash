@@ -1,11 +1,12 @@
 
 DOCKER_IMAGE = darlon/flask-dash
+PROJECT_NAME = flask-dash
 
 run:
 	docker compose up -d
 
 terminal:
-	docker compose exec -it $(DOCKER_IMAGE) /bin/bash
+	docker exec -it $(PROJECT_NAME) /bin/bash
 
 term: terminal
 
